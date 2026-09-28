@@ -1,0 +1,120 @@
+/**
+ * Tokens globais (tema claro/escuro) e reset leve.
+ * Componentes e layout detalhado: styles/app.css
+ */
+:root {
+  /* Tokens neutros: personalize a identidade visual neste arquivo. */
+  --text: #4a433d;
+  --text-h: #1c1410;
+  --text-muted: #7a726a;
+  --bg: #faf7f2;
+  --surface-muted: #f0ebe3;
+  --surface-elevated: #fffdf9;
+  --border: #e0d8ce;
+  --code-bg: #ede6dc;
+  --accent: #b85c2e;
+  --accent-strong: #8f3f18;
+  --accent-bg: rgba(184, 92, 46, 0.12);
+  --accent-border: rgba(184, 92, 46, 0.45);
+  --danger: #b42318;
+  --shadow-sm:
+    rgba(28, 20, 16, 0.06) 0 2px 6px, rgba(28, 20, 16, 0.04) 0 1px 2px;
+  --shadow:
+    rgba(28, 20, 16, 0.1) 0 12px 24px -6px,
+    rgba(28, 20, 16, 0.06) 0 4px 8px -2px;
+
+  --sans: "Source Sans 3", system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --content-max: 1100px;
+
+  font: 17px/145% var(--sans);
+  letter-spacing: 0.01em;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #c9c2b8;
+    --text-h: #f4efe8;
+    --text-muted: #9a9288;
+    --bg: #141210;
+    --surface-muted: #1e1b18;
+    --surface-elevated: #252220;
+    --border: #3a3530;
+    --code-bg: #2a2622;
+    --accent: #e8a06c;
+    --accent-strong: #f0c49a;
+    --accent-bg: rgba(232, 160, 108, 0.12);
+    --accent-border: rgba(232, 160, 108, 0.45);
+    --danger: #f87171;
+    --shadow-sm: rgba(0, 0, 0, 0.35) 0 2px 8px, rgba(0, 0, 0, 0.2) 0 1px 2px;
+    --shadow:
+      rgba(0, 0, 0, 0.45) 0 14px 28px -8px, rgba(0, 0, 0, 0.3) 0 6px 12px -4px;
+  }
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  display: inline;
+  border-radius: 4px;
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  background: var(--code-bg);
+  color: var(--text-h);
+}
